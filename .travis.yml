@@ -1,7 +1,14 @@
 language: python
 python:
-    - "2.7"
+- '2.7'
 install:
-    - export PYTHONPATH=$PYTHONPATH:.
-    - "pip install -r requirements.txt"
+- export PYTHONPATH=$PYTHONPATH:.
+- pip install -r requirements.txt
 script: py.test tests
+deploy:
+  provider: heroku
+  api_key:
+    secure: cVlqyBWNVHv0oBh1L0QMgIBjBZ+uetoNrkCZdK6msLg67NMy5tE0xnDvST2dGYH+oik0wzrIWkwrkmaVKtrGquI5zm6VUltIUwnOCsVKqD5OfidMqJtRDtYYUf+NHJ72mo8oaP7ag12nAiLqydO/coQvrlWCA6Kv4Vk2kucg+ww=
+  app: our-application-staging
+  on:
+    repo: chromy/application
