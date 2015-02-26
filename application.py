@@ -7,7 +7,9 @@ def index(n):
     return render_template('index.html', response=response)
 
 def fizzbuzz(n):
-    return 'Fizz'
+    if n % 3 == 0:
+        return 'Fizz'
+    return ''
 
 if __name__ == '__main__':
     app.run(debug=True)
