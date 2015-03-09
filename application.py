@@ -121,5 +121,8 @@ def fibo(n):
         return n
     return fibo(n-2) + fibo(n-1)
 
+def is_anagram(a, b):
+    return sorted(list(a)) == sorted(list(b))
+
 if __name__ == '__main__':
     app.run(debug=True)
