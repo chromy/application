@@ -29,9 +29,9 @@ def test_prime():
     args = {'q': "asdsakd: which of the following numbers are primes: 7, 10, 12, 2"}
     assert api(args) == '7,2'
     args = {'q': "asdsakd: which of the following numbers are primes: 7, 10, 12"}
-    assert api(args) == 7
+    assert api(args) == '7'
     args = {'q': "asdsakd: which of the following numbers are primes: 524, 11"}
-    assert api(args) == 11
+    assert api(args) == '11'
 
 def test_james_bond():
     args = {'q': "asdsakd: who played James Bond in the film Dr No"}
@@ -58,3 +58,9 @@ def test_power():
 def test_math():
     args = {'q': "asdsakd: what is 10 plus 11 multiplied by 16"}
     assert api(args) == 186
+    args = {'q': "asdsakd: what is 12 minus 2 multiplied by 3"}
+    assert api(args) == 6
+    args = {'q': "asdsakd: what is 4 plus 2 plus 3"}
+    assert api(args) == 9
+    args = {'q': "asdsakd: what is 4 multiplied by 2 plus 3"}
+    assert api(args) == 11
