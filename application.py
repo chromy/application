@@ -30,6 +30,15 @@ def api(args):
             return largest(numbers)
         else:
             return ','.join(map(str, prime(numbers)))
+    elif "anagram" in q:
+        hash = q.split(':')[0]
+        text = q.split(':')[1]
+        text = text.split(' ')
+        check = text[9][1:-1]
+        words = [x.replace(',', '') for x in text[10:]]
+
+        anagrams = filter(lambda x: is_anagram(check, x), words)
+        return ','.join(anagrams)
     elif "plus" in q or "multiplied" in q or 'minus' in q:
         # 14 plus 19 multiplied by 19
         hash = q.split(':')[0]
