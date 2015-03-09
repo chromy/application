@@ -18,5 +18,9 @@ def test_square_and_cube():
     assert api(args) == 1
 
 def test_paris():
-    args = {'q': "which city is the Eiffel tower in"}
+    args = {'q': "sadsadn: which city is the Eiffel tower in"}
     assert api(args) == "Paris"
+
+def test_prime():
+    args = {'q': "asdsakd: which of the following numbers are primes: 7, 10, 12"}
+    assert api(args) == 7
