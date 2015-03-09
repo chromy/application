@@ -48,6 +48,8 @@ def api(args):
         return square_and_cube(numbers)
     elif "Eiffel tower in" in q:
         return "Paris"
+    elif "James Bond" in q:
+        return "Sean Connery"
     return -1
 
 def largest(numbers):
