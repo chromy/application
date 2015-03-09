@@ -26,13 +26,16 @@ def api(args):
         numbers = q.split(':')[2]
         numbers = map(int, numbers.split(', '))
         return largest(numbers)
-    elif "plus" in q:
+    elif "plus" in q or "multiplied" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
         text = text.split(' ')
         x = int(text[3])
         y = int(text[5])
-        return plus([x, y])
+        if "plus" in q:
+            return plus([x, y])
+        else:
+            return x * y
     return 0
 
 def largest(numbers):
