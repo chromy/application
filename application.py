@@ -39,10 +39,10 @@ def api(args):
     elif "square and a cube" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
-        number_str = text.split(':')
+        number_str = q.split(':')[2]
         numbers = map(int, number_str.split(','))
         return square_and_cube(numbers)
-    return 0
+    return -1
 
 def largest(numbers):
     return max(numbers)
