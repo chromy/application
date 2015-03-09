@@ -33,10 +33,11 @@ def api(args):
     elif "anagram" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
+        text2 = q.split(':')[2]
         text = text.split(' ')
+        text2 = text2.split(' ')
         check = text[9][1:-1]
-        words = [x.replace(',', '') for x in text[10:]]
-
+        words = [x.replace(',', '') for x in text2[1:]]
         anagrams = filter(lambda x: is_anagram(check, x), words)
         return ','.join(anagrams)
     elif "plus" in q or "multiplied" in q or 'minus' in q:
