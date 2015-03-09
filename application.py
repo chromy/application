@@ -29,7 +29,7 @@ def api(args):
         if "largest" in q:
             return largest(numbers)
         else:
-            return prime(numbers)
+            return ','.join(map(str, prime(numbers)))
     elif "plus" in q or "multiplied" in q or "minus" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
@@ -47,7 +47,7 @@ def api(args):
         text = q.split(':')[1]
         number_str = q.split(':')[2]
         numbers = map(int, number_str.split(','))
-        return square_and_cube(numbers)
+        return ','.join(map(str, square_and_cube(numbers)))
     elif "Eiffel tower in" in q:
         return "Paris"
     elif "James Bond" in q:
@@ -64,9 +64,7 @@ def plus(numbers):
     return total
 
 def square_and_cube(numbers):
-    for n in numbers:
-        if is_square_and_cube(n):
-            return n
+    return filter(is_square_and_cube, numbers)
 
 def is_square_and_cube(number):
     square_root = number ** 0.5
@@ -77,10 +75,7 @@ def equal_float(a, b):
     return abs(a - b) < 0.00001
 
 def prime(numbers):
-    for n in numbers:
-        if is_prime(n):
-            return n
-    return -100
+    return filter(is_prime, numbers)
 
 def is_prime(n):
     if n % 2 == 0 and n > 2: 
