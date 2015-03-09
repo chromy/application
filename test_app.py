@@ -58,3 +58,9 @@ def test_power():
 def test_math():
     args = {'q': "asdsakd: what is 10 plus 11 multiplied by 16"}
     assert api(args) == 186
+    args = {'q': "asdsakd: what is 12 minus 2 multiplied by 3"}
+    assert api(args) == 6
+    args = {'q': "asdsakd: what is 4 plus 2 plus 3"}
+    assert api(args) == 9
+    args = {'q': "asdsakd: what is 4 multiplied by 2 plus 3"}
+    assert api(args) == 11
