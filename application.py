@@ -59,6 +59,13 @@ def api(args):
         return "Sean Connery"
     elif "currency" in q and "Spain":
         return "peseta"
+    elif "power of" in q:
+        hash = q.split(':')[0]
+        text = q.split(':')[1]
+        text = text.split(' ')
+        x = int(text[3])
+        y = int(text[8])
+        return x ** y
     return -1
 
 def largest(numbers):
