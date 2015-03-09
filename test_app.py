@@ -37,4 +37,12 @@ def test_james_bond():
 
 def test_spain_currency():
     args = {'q': "asdsakd: what currency did Spain use before the Euro"}
-    assert  api(args) == "peseta"
+    assert api(args) == "peseta"
+
+def test_fibonacci():
+    args = {'q': "asdsakd: what is the 7th number in the Fibonacci sequence"}
+    assert api(args) == 13
+    args = {'q': "asdsakd: what is the 1st number in the Fibonacci sequence"}
+    assert api(args) == 1
+    args = {'q': "asdsakd: what is the 2nd number in the Fibonacci sequence"}
+    assert api(args) == 1

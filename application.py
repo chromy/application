@@ -42,6 +42,11 @@ def api(args):
             return x * y
         else:
             return x - y
+    elif "Fibonacci" in q:
+        hash = q.split(':')[0]
+        text = q.split(':')[1]
+        index = text.split(' ')[4][:-2]
+        return fibo(int(index))
     elif "square and a cube" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
@@ -88,6 +93,11 @@ def is_prime(n):
     if n % 2 == 0 and n > 2: 
         return False
     return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
+
+def fibo(n):
+    if n < 2:
+        return n
+    return fibo(n-2) + fibo(n-1)
 
 if __name__ == '__main__':
     app.run(debug=True)
