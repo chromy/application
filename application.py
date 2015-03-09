@@ -6,6 +6,16 @@ def index():
     q = request.args.get('q')
     print 'q', q
     print 'args', request.args
+    try:
+        return str(api(request.args))
+    except Exception, e:
+        return str(0)
+
+@app.route('/api2')
+def index2():
+    q = request.args.get('q')
+    print 'q', q
+    print 'args', request.args
     return str(api(request.args))
 
 def api(args):
@@ -23,7 +33,7 @@ def api(args):
         x = int(text[3])
         y = int(text[5])
         return plus([x, y])
-    return ""
+    return 0
 
 def largest(numbers):
     return max(numbers)
