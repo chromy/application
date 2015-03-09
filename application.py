@@ -9,14 +9,20 @@ def index():
     return str(api(request.args))
 
 def api(args):
-    hash = args['q'].split(':')[0]
-    text = args['q'].split(':')[1]
-    numbers = args['q'].split(':')[2]
-    numbers = map(int, numbers.split(', '))
-    if "largest" in text:
+    q = args['q']
+    if "largest" in q:
+        hash = q.split(':')[0]
+        text = q.split(':')[1]
+        numbers = q.split(':')[2]
+        numbers = map(int, numbers.split(', '))
         return largest(numbers)
-    elif "plus" in text:
-        return plus(numbers)
+    elif "plus" in q:
+        hash = q.split(':')[0]
+        text = q.split(':')[1]
+        text = text.split(' ')
+        x = int(text[3])
+        y = int(text[5])
+        return plus([x, y])
     return ""
 
 def largest(numbers):
