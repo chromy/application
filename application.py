@@ -1,3 +1,4 @@
+import math
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
@@ -20,12 +21,15 @@ def index2():
 
 def api(args):
     q = args['q']
-    if "largest" in q:
+    if "largest" in q or "primes" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
         numbers = q.split(':')[2]
         numbers = map(int, numbers.split(', '))
-        return largest(numbers)
+        if "largest" in q:
+            return largest(numbers)
+        else:
+            return prime(numbers)
     elif "plus" in q or "multiplied" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
@@ -65,6 +69,17 @@ def is_square_and_cube(number):
 
 def equal_float(a, b):
     return abs(a - b) < 0.00001
+
+def prime(numbers):
+    for n in numbers:
+        if is_prime(n):
+            return n
+    return -100
+
+def is_prime(n):
+    if n % 2 == 0 and n > 2: 
+        return False
+    return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
 
 if __name__ == '__main__':
     app.run(debug=True)
