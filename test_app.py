@@ -16,3 +16,7 @@ def test_multiplied():
 def test_square_and_cube():
     args = {'q': "asdjsaklk: which of the following numbers is both a square and a cube: 68, 1"}
     assert api(args) == 1
+
+def test_paris():
+    args = {'q': "which city is the Eiffel tower in"}
+    assert api(args) == "Paris"
