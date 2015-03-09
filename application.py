@@ -30,6 +30,16 @@ def api(args):
             return largest(numbers)
         else:
             return ','.join(map(str, prime(numbers)))
+    elif "plus" in q or "multiplied" in q or 'minus' in q:
+        # 14 plus 19 multiplied by 19
+        hash = q.split(':')[0]
+        text = q.split(':')[1]
+        text = text.replace(" what is ", '')
+        text = text.replace("plus", '+')
+        text = text.replace("multiplied by", '*')
+        text = text.replace("multiplied", '*')
+        text = text.replace("minus", '-')
+        return eval(text)
     elif "plus" in q and "multiplied" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
