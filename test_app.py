@@ -48,3 +48,9 @@ def test_fibonacci():
     assert api(args) == 1
     args = {'q': "asdsakd: what is the 2nd number in the Fibonacci sequence"}
     assert api(args) == 1
+
+def test_power():
+    args = {'q': "asdsakd: what is 2 to the power of 2"}
+    assert api(args) == 4
+    args = {'q': "asdsakd: what is 1 to the power of 1000"}
+    assert api(args) == 1
