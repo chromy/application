@@ -42,6 +42,8 @@ def api(args):
         number_str = q.split(':')[2]
         numbers = map(int, number_str.split(','))
         return square_and_cube(numbers)
+    elif "Eiffel tower in" in q:
+        return "Paris"
     return -1
 
 def largest(numbers):
