@@ -52,6 +52,8 @@ def api(args):
         return "Paris"
     elif "James Bond" in q:
         return "Sean Connery"
+    elif "currency" in q and "Spain":
+        return "peseta"
     return -1
 
 def largest(numbers):

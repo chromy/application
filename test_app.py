@@ -28,11 +28,15 @@ def test_paris():
 def test_prime():
     args = {'q': "asdsakd: which of the following numbers are primes: 7, 10, 12, 2"}
     assert api(args) == '7,2'
+    args = {'q': "asdsakd: which of the following numbers are primes: 7, 10, 12"}
+    assert api(args) == 7
+    args = {'q': "asdsakd: which of the following numbers are primes: 524, 11"}
+    assert api(args) == 11
 
 def test_james_bond():
     args = {'q': "asdsakd: who played James Bond in the film Dr No"}
     assert api(args) == "Sean Connery"
 
-def test_james_bond():
-    args = {'q': "asdsakd: who played James Bond in the film Dr No"}
-    assert api(args) == "Sean Connery"
+def test_spain_currency():
+    args = {'q': "asdsakd: what currency did Spain use before the Euro"}
+    assert  api(args) == "peseta"
