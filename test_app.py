@@ -24,3 +24,7 @@ def test_paris():
 def test_prime():
     args = {'q': "asdsakd: which of the following numbers are primes: 7, 10, 12"}
     assert api(args) == 7
+
+def test_james_bond():
+    args = {'q': "asdsakd: who played James Bond in the film Dr No"}
+    assert api(args) == "Sean Connery"
