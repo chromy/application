@@ -36,6 +36,12 @@ def api(args):
             return plus([x, y])
         else:
             return x * y
+    elif "square and a cube" in q:
+        hash = q.split(':')[0]
+        text = q.split(':')[1]
+        number_str = text.split(':')
+        numbers = map(int, number_str.split(','))
+        return square_and_cube(numbers)
     return 0
 
 def largest(numbers):
@@ -46,6 +52,19 @@ def plus(numbers):
     for n in numbers:
         total += n
     return total
+
+def square_and_cube(numbers):
+    for n in numbers:
+        if is_square_and_cube(n):
+            return n
+
+def is_square_and_cube(number):
+    square_root = number ** 0.5
+    cube_root = number ** (1/3.0)
+    return equal_float(square_root, int(square_root)) and equal_float(cube_root, int(cube_root))
+
+def equal_float(a, b):
+    return abs(a - b) < 0.00001
 
 if __name__ == '__main__':
     app.run(debug=True)
