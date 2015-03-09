@@ -54,3 +54,7 @@ def test_power():
     assert api(args) == 4
     args = {'q': "asdsakd: what is 1 to the power of 1000"}
     assert api(args) == 1
+
+def test_math():
+    args = {'q': "asdsakd: what is 10 plus 11 multiplied by 16"}
+    assert api(args) == 186
