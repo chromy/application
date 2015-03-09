@@ -67,4 +67,4 @@ def test_math():
 
 def test_capital_usa():
     args = {'q': "asdsakd: what is the capital of USA?"}
-    assert api(args) == "Washington"
+    assert api(args) == "Washington, D.C."
