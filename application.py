@@ -5,19 +5,19 @@ app = Flask(__name__)
 @app.route('/api')
 def index():
     q = request.args.get('q')
-    print 'q', q
-    print 'args', request.args
     try:
-        return str(api(request.args))
+        result = str(api(request.args))
+        print q, '=>', result
+        return result
     except Exception, e:
         return str(0)
 
 @app.route('/api2')
 def index2():
     q = request.args.get('q')
-    print 'q', q
-    print 'args', request.args
-    return str(api(request.args))
+    result = str(api(request.args))
+    print q, '=>', result
+    return result
 
 def api(args):
     q = args['q']

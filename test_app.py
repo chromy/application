@@ -28,3 +28,7 @@ def test_prime():
 def test_james_bond():
     args = {'q': "asdsakd: who played James Bond in the film Dr No"}
     assert api(args) == "Sean Connery"
+
+def test_james_bond():
+    args = {'q': "asdsakd: who played James Bond in the film Dr No"}
+    assert api(args) == "Sean Connery"
