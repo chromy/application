@@ -64,3 +64,7 @@ def test_math():
     assert api(args) == 9
     args = {'q': "asdsakd: what is 4 multiplied by 2 plus 3"}
     assert api(args) == 11
+
+def test_capital_usa():
+    args = {'q': "asdsakd: what is the capital of USA?"}
+    assert api(args) == "Washington"
