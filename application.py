@@ -30,6 +30,14 @@ def api(args):
             return largest(numbers)
         else:
             return ','.join(map(str, prime(numbers)))
+    elif "plus" in q and "multiplied" in q:
+        hash = q.split(':')[0]
+        text = q.split(':')[1]
+        text = text.split(' ')
+        x = int(text[3])
+        y = int(text[5])
+        z = int(text[8])
+        return x + (y*z)
     elif "plus" in q or "multiplied" in q or "minus" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
@@ -92,7 +100,7 @@ def prime(numbers):
     return filter(is_prime, numbers)
 
 def is_prime(n):
-    if n % 2 == 0 and n > 2: 
+    if n % 2 == 0 and n > 2:
         return False
     return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
 
