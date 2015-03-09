@@ -30,7 +30,7 @@ def api(args):
             return largest(numbers)
         else:
             return prime(numbers)
-    elif "plus" in q or "multiplied" in q:
+    elif "plus" in q or "multiplied" in q or "minus" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]
         text = text.split(' ')
@@ -38,8 +38,10 @@ def api(args):
         y = int(text[5])
         if "plus" in q:
             return plus([x, y])
-        else:
+        elif "multiplied" in q:
             return x * y
+        else:
+            return x - y
     elif "square and a cube" in q:
         hash = q.split(':')[0]
         text = q.split(':')[1]

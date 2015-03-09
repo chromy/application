@@ -9,6 +9,10 @@ def test_plus():
     args = {'q': "asdjsaklk: what is 5 plus 4"}
     assert api(args) == 9
 
+def test_minus():
+    args = {'q': "asdjsaklk: what is 5 minus 4"}
+    assert api(args) == 1
+
 def test_multiplied():
     args = {'q': "asdjsaklk: what is 5 multiplied 4"}
     assert api(args) == 20
