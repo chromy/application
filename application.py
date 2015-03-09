@@ -71,6 +71,8 @@ def api(args):
         number_str = q.split(':')[2]
         numbers = map(int, number_str.split(','))
         return ','.join(map(str, square_and_cube(numbers)))
+    elif "capital" in q and "USA" in q:
+        return "Washington, D.C."
     elif "Eiffel tower in" in q:
         return "Paris"
     elif "James Bond" in q:
