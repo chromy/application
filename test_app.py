@@ -68,3 +68,9 @@ def test_math():
 def test_capital_usa():
     args = {'q': "asdsakd: what is the capital of USA?"}
     assert api(args) == "Washington"
+
+def test_anagram():
+    args = {'q': '2ab81530: which of the following is an anagram of "dictionary": butterfly, indicatory, abdication, incendiary'}
+    assert api(args) == "indicatory"
+    args = {'q': '2ab81530: which of the following is an anagram of "cat": fox, dog, tac, act'}
+    assert api(args) == "tac, act"
